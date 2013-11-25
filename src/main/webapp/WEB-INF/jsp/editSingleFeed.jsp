@@ -117,3 +117,4 @@
 	
 	<a href="<portlet:renderURL portletMode="view"/>"><img src="<c:url value="/images/arrow_left.png"/>"> Return to feed</a>
 </div>
+<jsp:directive.include file="/WEB-INF/jsp/footer.jsp"/>

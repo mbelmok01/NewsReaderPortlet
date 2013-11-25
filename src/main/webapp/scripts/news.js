@@ -49,11 +49,12 @@ if (!upnews.init) {
                     	view.storyContainers["feed" + feed.id] = detail;
                     });
     
-                    // construct a story list for the currently active feed
+                    // construct a story list for the currently active feed = construit une liste d'entrée (lien) pour chaque flux
                     var entryList = new upnews.NewsStoryList();
                     $(data.feed.entries).each(function (idx, entry) {
                         entryList.add(new upnews.NewsStory(entry));
                     });
+
                     data.feed.stories = entryList;
                     data.feed.id = data.activeFeed;
                     view.feedDetails = new upnews.NewsFeedDetails(data.feed);                

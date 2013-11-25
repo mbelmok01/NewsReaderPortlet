@@ -39,3 +39,4 @@
 <p>
 	<a href="<portlet:renderURL portletMode="view"/>"><img src="<c:url value="/images/arrow_left.png"/>" style="vertical-align: middle"> Return to news feeds</a>
 </p>
+<jsp:directive.include file="/WEB-INF/jsp/footer.jsp"/>

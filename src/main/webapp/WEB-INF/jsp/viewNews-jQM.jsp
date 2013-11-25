@@ -74,7 +74,7 @@
             <li>
                 <a href="${"<%="} story.link ${"%>"}">
                     <h3>${"<%="} story.title ${"%>"}</h3>
-                    <p>${"<%="} story.description ${"%>"}</p>
+                    <span>${"<%="} story.description ${"%>"}</span>
                 </a>
             </li>
           ${"<%"} }); ${"%>"}
@@ -158,3 +158,4 @@
     });
 
 </rs:compressJs></script>
+<jsp:directive.include file="/WEB-INF/jsp/footer.jsp"/>

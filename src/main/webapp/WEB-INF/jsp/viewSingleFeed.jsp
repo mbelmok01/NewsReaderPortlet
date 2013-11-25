@@ -38,6 +38,7 @@
         -webkit-box-shadow: 0 0 5px #aaa;
         box-shadow: 0 0 5px #aaa;
         max-width: 400px;
+        background-color: white;
     }
     * html .ui-tooltip { background-image: none; }
     body .ui-tooltip { border-width:2px; }
@@ -126,3 +127,4 @@
         });
     </rs:compressJs></script>
 </c:if>
+<jsp:directive.include file="/WEB-INF/jsp/footer.jsp"/>

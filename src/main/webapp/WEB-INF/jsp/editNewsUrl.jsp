@@ -18,36 +18,71 @@
     under the License.
 
 --%>
+<style type="text/css">
+.input-medium { border-radius: 5; background-color:#DFEFFF; width: 55%}
+input {margin: auto; display: inline;}
+.form-control {width: 55%}
+label{text-align: left;width: auto}
 
+
+</style>
 <jsp:directive.include file="/WEB-INF/jsp/include.jsp"/>
 
 <portlet:actionURL var="postUrl"><portlet:param name="action" value="editUrl"/></portlet:actionURL>
 
-<h3>Edit news feed</h3>
+<!-- Form Name -->
+<legend><spring:message code="edit.news.feed.edit"/></legend>
 
-<form:form name="news" commandName="newsListingCommand" action="${postUrl}">
-	<form:hidden path="id"/>
-	<p>
-		<label class="portlet-form-field-label">News feed name:</label>
-		<form:input path="name" size="50"/>
-		<form:errors path="name" cssClass="portlet-msg-error"/>
-	</p>
-   	<p>
-        <label class="portlet-form-field-label">News feed URL:</label>
-        <form:input path="url" size="50"/>
-		<form:errors path="url" cssClass="portlet-msg-error"/>
-	</p>
-	<br/>
-	<p>
-		Note: News feed URLs should start with http:// or https://.
-	</p>
-	<br/>
-    <p>
-        <button type="submit" class="portlet-form-button">Save news feed</button>
-    </p>
+<form:form name="news" commandName="newsListingCommand" class="form-horizontal"  action="${postUrl}">
+    <fieldset>
+        <form:hidden path="id" />
+
+        <!-- Text input-->
+            <div class="control-group">
+                <label class="control-label" /*style="padding-top:0px;"*/ for="textinput">
+                    <spring:message code="edit.news.feed.name"/>
+                </label>
+                <div class="controls">
+                    <form:input path="name" placeholder="Le monde" class="form-control" style="width:55%" size="50"/>
+                    <form:errors path="name" cssClass="portlet-msg-error"/>
+                </div>
+            </div>
+            <br/>
+
+
+        <!-- Text input-->
+            <div class="control-group">
+                <label class="control-label" /*style="padding-top:0px;"*/ for="textinput">
+                    <spring:message code="edit.news.feed.url"/>
+                </label>
+                <div class="controls">
+                    <form:input path="url" placeholder="http://www.lemonde.fr/rss/une.xml" class="form-control" style="width:55%" size="50" />
+                    <form:errors path="url" cssClass="portlet-msg-error"/>
+                </div>
+            </div>
+            
+            <br/>
+
+            <div>
+                <spring:message code="edit.news.feed.note"/>
+            </div>
+
+            <br/>
+            
+        <!-- Button -->
+            <div class="control-group">
+                <label class="control-label" ></label>
+                <div class="controls">
+                    <button type="submit" class="btn btn-primary" style="border-radius=5;">
+                        <spring:message code="edit.news.feed.sav"/>
+                    </button>
+                </div>
+            </div>
+    </fieldset>
 </form:form>
-<br />
-<hr />
+
 <p>
-	<a href="<portlet:renderURL><portlet:param name="action" value="editPrefences"/></portlet:renderURL>"><img src="<c:url value="/images/arrow_left.png"/>" style="vertical-align: middle"> Return to main edit page</a>
+        <a href="<portlet:renderURL><portlet:param name="action" value="editPrefences"/></portlet:renderURL>"><img src="<c:url value="/images/arrow_left.png"/>" style="vertical-align: middle"><spring:message code="edit.news.feed.back"/></a>
 </p>
+
+<jsp:directive.include file="/WEB-INF/jsp/footer.jsp"/>

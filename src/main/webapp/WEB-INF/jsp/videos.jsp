@@ -144,3 +144,4 @@
 
     }); 
 </rs:compressJs></script>
+<jsp:directive.include file="/WEB-INF/jsp/footer.jsp"/>

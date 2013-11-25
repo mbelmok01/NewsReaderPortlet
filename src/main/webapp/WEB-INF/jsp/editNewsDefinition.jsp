@@ -30,6 +30,12 @@
 		input.name = 'role';
 		input.type = 'text';
 		input.size = '20';
+		input.style.marginLeft= '35px';
+		input.style.backgroundColor= '#ffffff';
+		input.style.backgroundImage='none';
+		input.style.border='1px solid #cccccc';
+		input.style.borderRightColor ='rgb(204, 204, 204)'; 
+		input.style.borderRadius='4px';
 		container.appendChild(input);
 		var remove = document.createElement('a');
 		remove.href = 'javascript:;';
@@ -56,11 +62,24 @@
 		input.name = 'parameterName';
 		input.type = 'text';
 		input.size = '20';
+		input.style.marginLeft= '35px';
+		input.style.backgroundColor= '#ffffff';
+		input.style.backgroundImage='none';
+		input.style.border='1px solid #cccccc';
+		input.style.borderRightColor ='rgb(204, 204, 204)'; 
+		input.style.borderRadius='4px';
 		container.appendChild(input);
 		input = document.createElement('input');
 		input.name = 'parameterValue';
 		input.type = 'text';
 		input.size = '20';
+		input.style.marginLeft= '35px';
+		input.style.backgroundColor= '#ffffff';
+		input.style.backgroundImage='none';
+		input.style.border='1px solid #cccccc';
+		input.style.borderRightColor ='rgb(204, 204, 204)'; 
+		input.style.borderRadius='4px';
+
 		container.appendChild(input);
 		var remove = document.createElement('a');
 		remove.href = 'javascript:;';
@@ -79,63 +98,119 @@
 		div.parentNode.removeChild(div);
 	}
 </rs:compressJs></script>
+<style type="text/css">
+	label {
+		width: auto
+	}
+</style>
 
 <portlet:actionURL var="postUrl"><portlet:param name="action" value="editNewsDefinition"/></portlet:actionURL>
 
-<h3>Edit feed</h3>
+<h3>
+	<spring:message code="edit.news.feed.edit"/>
+</h3>
 
 <form:form name="news" commandName="newsDefinitionForm" action="${postUrl}">
 	<form:hidden path="id"/>
-	<p>
-		<label class="portlet-form-field-label">Feed name:</label>
-		<form:input path="name" size="50"/>
-		<form:errors path="name" cssClass="portlet-msg-error"/>
-	</p>
-   	<p>
-        <label class="portlet-form-field-label">Feed class:</label>
-        <form:input path="className" size="50"/>
-		<form:errors path="className" cssClass="portlet-msg-error"/>
-	</p>
-	<br/>
-	<p id="role-list">
-		<label class="portlet-form-field-label">Feed default roles:</label><br />
-		<c:forEach items="${ newsDefinitionForm.role }" var="role">
-			<div style="padding-left: 5px;">
-				<input name="role" type="text" value="${ role }" size="20"/>
-				<a href="javascript:;" onclick="removeRole(this)">
-					<img style="vertical-align: middle;" src="<c:url value="/images/delete.png"/>"/>
-				</a>
+		
+		<div class="row">
+			<div class="col-lg-2">
+				<label>
+					<spring:message code="edit.news.feed.name"/>
+				</label>
 			</div>
-		</c:forEach>
-		<div style="padding: 5px;">
-			<a href="javascript:;" onclick="addRole('role-list')">
-				<img style="vertical-align: middle;" src="<c:url value="/images/add.png"/>"/>
-				add a role</a>
-		</div>
-	</p>
-	<p id="parameter-list">
-		<label class="portlet-form-field-label">Feed parameters:</label><br />
-		<c:forEach items="${ newsDefinitionForm.parameterName }" var="paramName" varStatus="status">
-			<div style="padding-left: 5px">
-				<input name="parameterName" type="text" value="${ paramName }" size="20"/>
-				<input name="parameterValue" type="text" value="${ newsDefinitionForm.parameterValue[status.index] }" size="20"/>
-				<a href="javascript:;" onclick="removeParameter(this)">
-					<img style="vertical-align: middle;" src="<c:url value="/images/delete.png"/>"/>
-				</a>
+			<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+				<form:input path="name" class="form-control" size="50"/>
+				<form:errors path="name" cssClass="portlet-msg-error has-error"/>
 			</div>
-		</c:forEach>
-		<div style="padding: 5px;">
-			<a href="javascript:;" onclick="addParameter('parameter-list')">
-				<img style="vertical-align: middle;" src="<c:url value="/images/add.png"/>"/>
-				add a parameter</a>
 		</div>
-	</p>
-    <p>
-        <button type="submit" class="portlet-form-button">Save feed</button>
-    </p>
-</form:form>
-<br />
-<hr />
-<p>
-	<a href="<portlet:renderURL><portlet:param name="action" value="administration"/></portlet:renderURL>"><img src="<c:url value="/images/arrow_left.png"/>" style="vertical-align: middle"> Return to main administration page</a>
-</p>
+		<br/>
+   		<div class="row">
+        	<div class="col-lg-2">
+    	    	<label class="portlet-form-field-label">
+        			<spring:message code="edit.news.feed.url"/>
+        		</label>
+        	</div>
+        	<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+        		<form:select path="className" class="form-control">
+            		<c:forEach items="${availableAdapters}" var="adapter">
+                		<c:set var="adapterName"><spring:message code="${adapter.nameKey}"/></c:set>
+                		<c:set var="adapterDescription"><spring:message code="${adapter.descriptionKey}"/></c:set>
+                		<form:option value="${adapter.className}" label="${adapterName}" title="${adapterDescription}" />
+            		</c:forEach>
+        		</form:select>
+        		<form:errors path="className" cssClass="portlet-msg-error"/>
+        	</div>
+        	<br/>
+
+        	<div id="role-list" class="row">
+				<div class="col-lg-12" style="margin-left:15px;">
+				<label class="portlet-form-field-label">
+					<spring:message code="edit.news.feed.roles"/>
+				</label>
+				<br/>
+				<c:forEach items="${ newsDefinitionForm.role }" var="role">
+					<div style="padding-left: 5px;">
+						<a href="javascript:;" onclick="removeRole(this)">
+							<img style="vertical-align: middle;" src="<c:url value="/images/delete.png"/>"/>
+						</a>
+						<input name="role" type="text" class="control-form" value="${ role }" size="20"/>
+					</div>
+				</c:forEach>
+				<div style="padding: 5px;">
+					<a href="javascript:;" onclick="addRole('role-list')">
+						<img style="vertical-align: middle;" src="<c:url value="/images/add.png"/>"/>
+						<spring:message code="edit.news.feed.roles.add"/>
+					</a>
+				</div>
+				</div>
+			</div>
+
+
+			<div id="parameter-list" class="row">
+				<div class="col-lg-12" style="margin-left:15px;">
+				<label class="portlet-form-field-label">
+					<spring:message code="edit.news.feed.param"/>
+				</label>
+				<br />
+				<c:forEach items="${ newsDefinitionForm.parameterName }" var="paramName" varStatus="status">
+					<div style="padding-left: 5px">
+						<form class="form-inline" role="form">
+							<div class="form-group">
+								<input name="parameterName" id="id1" type="text" value="${ paramName }" size="20"/>
+									<input name="parameterValue"  type="text" value="${ newsDefinitionForm.parameterValue[status.index] }" size="20"/>
+								<a href="javascript:;" onclick="removeParameter(this)">
+									<img style="vertical-align: middle;" src="<c:url value="/images/delete.png"/>"/>
+								</a>
+							</div>
+						</form>
+					</div>
+				</c:forEach>
+				<div style="padding: 5px;">
+					<a href="javascript:;" onclick="addParameter('parameter-list')">
+						<img style="vertical-align: middle;" src="<c:url value="/images/add.png"/>"/>
+						<spring:message code="edit.news.feed.param.add"/>
+					</a>
+				</div>
+				</div>
+			</div>
+
+			<div>
+        		<button type="submit" class="btn btn-primary" style="margin-left: 15;">
+        			<spring:message code="edit.news.feed.sav"/>
+        		</button>
+        	</div>
+        </form:form>
+        <br />
+       <hr />
+
+       <div class="row">
+       	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+       	<p style="margin-left:15px">
+       		<a href="<portlet:renderURL><portlet:param name="action" value="administration"/></portlet:renderURL>"><img src="<c:url value="/images/arrow_left.png"/>" style="vertical-align: middle"> <spring:message code="administration.feed.back"/>
+       	</a>
+       	</p>
+       	</div>
+
+       </div>
+<jsp:directive.include file="/WEB-INF/jsp/footer.jsp"/>
