@@ -122,7 +122,6 @@ ${n}.jQuery(function(){
     </a>
 </p>
 
-
 <h3><spring:message code="edit.news.exist"/></h3>
 
 <div class="table-responsive">
@@ -179,14 +178,6 @@ ${n}.jQuery(function(){
         </tbody>
     </table>
 </div>
-
-<p>
-    <a href="<portlet:renderURL><portlet:param name="action" value="editNewsDefinition"/></portlet:renderURL>">
-        <img src="<c:url value="/images/rss_add.png"/>" style="vertical-align: middle"/>
-        <spring:message code="edit.news.add"/>
-    </a>
-</p>
-
 
 <h3><spring:message code="edit.news.pref"/></h3>
 <div>

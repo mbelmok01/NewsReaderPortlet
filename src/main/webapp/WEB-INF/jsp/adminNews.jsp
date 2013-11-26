@@ -64,35 +64,6 @@
             
         </table>
     </div>
-
-
-<!-- <table class="edit-news">
-    <tr>
-        <td><h3><spring:message code="administration.preconf"/></h3></td>
-        <td class="instruction"><spring:message code="edit.news.edit"/></td>
-        <td class="instruction"><spring:message code="edit.news.delete"/></td>
-    </tr>
-    <c:forEach items="${ model.feeds }" var="feed">
-        <tr>
-            <td>${ feed.name }</td>
-            <td class="instruction">
-                <a href="<portlet:renderURL><portlet:param name="action" value="editNewsDefinition"/>
-                        <portlet:param name="id" value="${ feed.id }"/></portlet:renderURL>"
-                        title="Edit feed">
-                    <img alt="edit" src="<c:url value="/images/pencil.png"/>"/>
-                </a>
-            </td>
-            <td class="instruction">
-                <a href="<portlet:actionURL><portlet:param name="action" value="deletePredefinedFeed"/>
-                        <portlet:param name="id" value="${ feed.id }"/></portlet:actionURL>"
-                        title="Delete feed">
-                    <img alt="delete" src="<c:url value="/images/rss_delete.png"/>"/>
-                </a>
-            </td>
-        </tr>
-    </c:forEach>
-</table> -->
-
 <p>
     <a href="<portlet:renderURL><portlet:param name="action" value="editNewsDefinition"/></portlet:renderURL>">
         <img src="<c:url value="/images/rss_add.png"/>" style="vertical-align: middle"/>

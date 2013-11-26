@@ -38,15 +38,9 @@
 <c:set var="portalJsNamespace" value="${renderRequest.preferences.map['portalJsNamespace'][0]}"/>
 
 <script type="text/javascript" src="/../NewsReaderPortlet/rs/jquery/1.10.2/jquery-1.10.2.min.js"></script>
-<!-- <link type="text/css" href="/../NewsReaderPortlet/rs/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" /> -->
 <link type="text/css" href="/../NewsReaderPortlet/rs/bootstrap/3.0.2/css/bootstrap-modified.css" rel="stylesheet" />
 <script type="text/javascript" src="/../NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 <link type="text/css" href="/../NewsReaderPortlet/rs/bootstrap/3.0.2/css/bootstrap-theme.min.css" rel="stylesheet" />
-
-
-<link type="text/css" href="/../NewsReaderPortlet/rs/style.css" rel="stylesheet" />
-
-
 
 <%-- Portlet container --%>
 <div class="portlet-container sm">

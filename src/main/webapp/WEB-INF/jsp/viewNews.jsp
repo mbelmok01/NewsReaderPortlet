@@ -40,12 +40,6 @@
         body .tooltip {background-color: white;}
         h4{font-size: 15; overflow: auto;}
         .panel-heading{padding-bottom: 25;}
-        .ui-state-active {
-
-        }
-        .ui-state-over{
-
-        }
     </style>
     <portlet:resourceURL var="feedUrl"/>
 
@@ -124,9 +118,6 @@ ${"<%"} _(feeds).each(function(feed) { ${" %>"}
 </c:otherwise>
 </c:choose>
 </script>
-<!-- details div
-displays the title of the story in a div with titlebar portlet-titlebar css class that contains a h2 tag
--->
 
 <script type="text/javascript" id="${n}feed-detail-template">
     <div class="titlebar portlet-titlebar">
@@ -251,10 +242,6 @@ displays the title of the story in a div with titlebar portlet-titlebar css clas
                     select: function (event, ui) {
                         var id = ui.panel.id.split("feed")[1];
                         newsView.feedListView.trigger("feedSelected", id);
-                        // $("li.ui-state-default.ui-corner-top").removeClass("active");// tous les onglets sont actifs
-                        // $("ui-state-default.ui-corner-top.ui-tabs-selected.ui-state-active").addClass("active");
-
-                         // $("#${n} .news-stories-container").removeClass("active");
                          $("#${n} .news-stories-container").hide();
                          $("#${n}feed" + id).show();
                          $("#${n}feed" + id).addClass("active");
@@ -262,7 +249,6 @@ displays the title of the story in a div with titlebar portlet-titlebar css clas
                      selected: index
                  });
             }
-
         };
         newsView.url = "${feedUrl}";
         newsView.feedDetailViewFn = DesktopNewsFeedDetailView;
@@ -270,19 +256,14 @@ displays the title of the story in a div with titlebar portlet-titlebar css clas
         newsView.namespace = "${n}";
 
         $(document).ready(function () {
-
             newsView.feedListView.bind("feedSelected", function (id) {
                 if (!newsView.feedDetails || newsView.feedDetails.get("id") !== id) {
                     newsView.getFeed(id);
                 }
             });
-
             newsView.setup();
-
         });
-
     });
-
 </rs:compressJs></script>
 
 
