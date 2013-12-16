@@ -105,7 +105,7 @@ public class NewsController extends AbstractNewsController {
     @ModelAttribute
     public void getPreferences(RenderRequest request, Model model) {
     	 PortletPreferences prefs = request.getPreferences();
-         model.addAttribute("storyView", prefs.getValue("summaryView", "flyout"));
+         model.addAttribute("storyView", prefs.getValue("summaryView", "summaries"));
          model.addAttribute("feedView", prefs.getValue("feedView", "select"));
          model.addAttribute("newWindow", Boolean.valueOf(prefs.getValue("newWindow", "true")));
     }

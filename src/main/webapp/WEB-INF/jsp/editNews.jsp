@@ -217,9 +217,10 @@ ${n}.jQuery(function(){
         <div class="form-group row" >
             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
                 <select class="form-control" id="${n}storyView">
-                    <option value="flyout" ${ storyView == 'flyout' ? 'selected="selected"' : '' }><spring:message code="edit.news.storyview.flyout"/>
+                    
+                    <option value=" " ${ storyView == 'summaries' ? 'selected="selected"' : '' }><spring:message code="edit.news.storyview.scrolldiv"/>
                     </option>
-                    <option value="summaries" ${ storyView == 'summaries' ? 'selected="selected"' : '' }><spring:message code="edit.news.storyview.scrolldiv"/>
+                    <option value="flyout" ${ storyView == 'flyout' ? 'selected="selected"' : '' }><spring:message code="edit.news.storyview.flyout"/>
                     </option>
                 </select>
             </div>

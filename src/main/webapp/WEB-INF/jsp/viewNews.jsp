@@ -21,9 +21,14 @@
 
     <jsp:directive.include file="/WEB-INF/jsp/include.jsp"/>
     <c:set var="n"><portlet:namespace/></c:set>
-
+    
+<script type="text/javascript" src="/../NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.min.js"></script>
     <style>
-        ul.news-stories li { padding-bottom:0.5em; list-style-image:url('<rs:resourceURL value="/rs/famfamfam/silk/1.3/bullet_feed.png"/>');  }
+        ul.news-stories li {
+        	padding-bottom:0.5em;
+        	list-style-image:url('<rs:resourceURL value="/rs/famfamfam/silk/1.3/bullet_feed.png"/>');
+        }
+
         .ui-tooltip {
             padding:8px;
             position:absolute;
@@ -35,21 +40,39 @@
             max-width: 400px;
             background-color: white;
         }
-        * html .ui-tooltip { background-image: none; background-color: white; }
-        body .ui-tooltip { border-width:2px; }
-        body .tooltip {background-color: white;}
-        h4{font-size: 15; overflow: auto;}
-        .panel-heading{padding-bottom: 25;}
+
+        * html .ui-tooltip {
+        	background-image: none;
+        	background-color: white;
+        }
+
+        body .ui-tooltip {
+        	border-width:2px;
+        }
+
+        body .tooltip {
+        	background-color: white;
+        }
+
+        h4 {
+        	font-size: 15;
+        	overflow: auto;
+        }
+
+        .panel-heading {
+        	padding-bottom: 25;
+        }
+
     </style>
     <portlet:resourceURL var="feedUrl"/>
 
     <div class="org-jasig-portlet-newsreader">
         <div id="${n}">
-            <div class="news-reader-feed-list portlet ptl-newsreader view-news ">
+            <div class="news-reader-feed-list portlet ptl-newsreader view-news "/>
                 <c:choose>
                 <c:when test="${ feedView == 'select' }">
                 <div class="form-group row" >
-                  <div class="col-lg-3">
+                  <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
                       <select class="news-feeds-container form-control list-group"></select> <!-- menu deroulant --> 
                   </div>
               </div>
@@ -62,7 +85,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><spring:message code="edit.news.portletTitle"/></a>
+                <!-- <a class="navbar-brand" href="#"><spring:message code="edit.news.portletTitle"/></a> -->
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="news-feeds-container nav nav-tabs">
