@@ -22,7 +22,7 @@
     <jsp:directive.include file="/WEB-INF/jsp/include.jsp"/>
     <c:set var="n"><portlet:namespace/></c:set>
     
-<script type="text/javascript" src="/../NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
     <style>
         ul.news-stories li {
         	padding-bottom:0.5em;
@@ -85,7 +85,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!-- <a class="navbar-brand" href="#"><spring:message code="edit.news.portletTitle"/></a> -->
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="news-feeds-container nav nav-tabs">

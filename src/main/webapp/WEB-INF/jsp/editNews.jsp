@@ -32,8 +32,6 @@
     <jsp:directive.include file="/WEB-INF/jsp/scripts.jsp"/>
     <script type="text/javascript">
 
-//alert($("div.portlet").innerWidth());
-
 <rs:compressJs>
 ${n}.jQuery(function(){
 

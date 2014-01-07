@@ -39,7 +39,6 @@
 
 <script type="text/javascript" src="/../NewsReaderPortlet/rs/jquery/1.10.2/jquery-1.10.2.min.js"></script>
 <link type="text/css" href="/../NewsReaderPortlet/rs/bootstrap/3.0.2/css/bootstrap-modified.css" rel="stylesheet" />
-<script type="text/javascript" src="/../NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 <link type="text/css" href="/../NewsReaderPortlet/rs/bootstrap/3.0.2/css/bootstrap-theme.min.css" rel="stylesheet" />
 
 <%-- Portlet container --%>
@@ -47,7 +46,14 @@
  
  
 <script type="text/javascript">
- 
+
+    // Verify if bootstrap.js is already imported by uPortal
+    // It's create a carousel object, if it's ok, the object is created, that means that bootstrap.js is imported and it's return message "function"
+    // Otherwice, it's return undifined and the instruction is applyed
+    // console.log($().carousel || document.write('<script src="/NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.js"><\/script>'));
+    $().carousel || document.write('<script src="/NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.js"><\/script>');
+    
+
     var $portletContainers;
  
 $(document).ready(function() {

@@ -30,14 +30,12 @@ label{text-align: left;width: auto}
 
 <portlet:actionURL var="postUrl"><portlet:param name="action" value="editUrl"/></portlet:actionURL>
 
-<!-- Form Name -->
 <legend><spring:message code="edit.news.feed.edit"/></legend>
 
 <form:form name="news" commandName="newsListingCommand" class="form-horizontal"  action="${postUrl}">
     <fieldset>
         <form:hidden path="id" />
 
-        <!-- Text input-->
             <div class="control-group">
                 <label class="control-label" /*style="padding-top:0px;"*/ for="textinput">
                     <spring:message code="edit.news.feed.name"/>
@@ -49,8 +47,6 @@ label{text-align: left;width: auto}
             </div>
             <br/>
 
-
-        <!-- Text input-->
             <div class="control-group">
                 <label class="control-label" /*style="padding-top:0px;"*/ for="textinput">
                     <spring:message code="edit.news.feed.url"/>
@@ -69,7 +65,6 @@ label{text-align: left;width: auto}
 
             <br/>
             
-        <!-- Button -->
             <div class="control-group">
                 <label class="control-label" ></label>
                 <div class="controls">
