@@ -21,7 +21,6 @@
 
     <jsp:directive.include file="/WEB-INF/jsp/include.jsp"/>
     <c:set var="n"><portlet:namespace/></c:set>
-    
 
     <style>
         ul.news-stories li {

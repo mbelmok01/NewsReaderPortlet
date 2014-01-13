@@ -40,19 +40,26 @@
 <script type="text/javascript" src="/../NewsReaderPortlet/rs/jquery/1.10.2/jquery-1.10.2.min.js"></script>
 <link type="text/css" href="/../NewsReaderPortlet/rs/bootstrap/3.0.2/css/bootstrap-modified.css" rel="stylesheet" />
 <link type="text/css" href="/../NewsReaderPortlet/rs/bootstrap/3.0.2/css/bootstrap-theme.min.css" rel="stylesheet" />
-
+<!-- <script src="/../NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.min.js"></script> -->
 <%-- Portlet container --%>
 <div class="portlet-container sm">
- 
- 
+
 <script type="text/javascript">
 
     // Verify if bootstrap.js is already imported by uPortal
-    // It's create a carousel object, if it's ok, the object is created, that means that bootstrap.js is imported and it's return message "function"
+    // it's call to the function Carousel, if it's return function, it means that bootstrap.js is already imported
     // Otherwice, it's return undifined and the instruction is applyed
-    // console.log($().carousel || document.write('<script src="/NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.js"><\/script>'));
-    $().carousel || document.write('<script src="/NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.js"><\/script>');
+ 
+    $().carousel || document.write('<script src="/../NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.js"><\/script>');
+
+    console.log("ici le console log 2 : "+$().carousel || document.write('<script src="/../NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.js"> <\/script>'));
     
+    
+    // if($.fn.jquery != "1.10.2")
+    // {    
+    //     console.log("ici");
+    //     document.write('<script src="/../NewsReaderPortlet/rs/jquery/1.10.2/jquery-1.10.2.min.js"><\/script>');
+    // }
 
     var $portletContainers;
  
