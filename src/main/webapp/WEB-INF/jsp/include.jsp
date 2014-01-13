@@ -40,35 +40,34 @@
 <script type="text/javascript" src="/../NewsReaderPortlet/rs/jquery/1.10.2/jquery-1.10.2.min.js"></script>
 <link type="text/css" href="/../NewsReaderPortlet/rs/bootstrap/3.0.2/css/bootstrap-modified.css" rel="stylesheet" />
 <link type="text/css" href="/../NewsReaderPortlet/rs/bootstrap/3.0.2/css/bootstrap-theme.min.css" rel="stylesheet" />
-<!-- <script src="/../NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.min.js"></script> -->
 <%-- Portlet container --%>
 <div class="portlet-container sm">
 
 <script type="text/javascript">
 
-    // Verify if bootstrap.js is already imported by uPortal
-    // it's call to the function Carousel, if it's return function, it means that bootstrap.js is already imported
-    // Otherwice, it's return undifined and the instruction is applyed
- 
+
+    /*
+    Verify if bootstrap.js is already imported by uPortal
+    It's call to the function Carousel, if it's return function, it means that bootstrap.js is already imported.
+    Otherwice, it's return undifined and the instruction is applyed
+    */
+
     $().carousel || document.write('<script src="/../NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.js"><\/script>');
-
-    console.log("ici le console log 2 : "+$().carousel || document.write('<script src="/../NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.js"> <\/script>'));
     
-    
-    // if($.fn.jquery != "1.10.2")
-    // {    
-    //     console.log("ici");
-    //     document.write('<script src="/../NewsReaderPortlet/rs/jquery/1.10.2/jquery-1.10.2.min.js"><\/script>');
-    // }
-
+    /*
+    if($.fn.jquery != "1.10.2")
+    {
+        document.write('<script src="/../NewsReaderPortlet/rs/jquery/1.10.2/jquery-1.10.2.min.js"><\/script>');
+    }
+    */
     var $portletContainers;
- 
-$(document).ready(function() {
+
+    $(document).ready(function() {
     $portletContainers = $(".portlet-container");
     // Resize event isn't fired on DOM Content Loaded, we launch the function manually
     onWindowResize();
-  $(window).resize(onWindowResize);
-});
+    $(window).resize(onWindowResize);
+    });
  
 function onWindowResize() {
     $portletContainers.each(function(index) {
