@@ -53,7 +53,7 @@
     */
 
     $().carousel || document.write('<script src="/../NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.js"><\/script>');
-    
+
     /*
     if($.fn.jquery != "1.10.2")
     {
@@ -90,7 +90,7 @@ function onWindowResize() {
 }
  
 </script>
- 
+
 <!-- Your code here -->
 
 
