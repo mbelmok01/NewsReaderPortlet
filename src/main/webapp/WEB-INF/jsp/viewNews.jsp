@@ -22,55 +22,6 @@
     <jsp:directive.include file="/WEB-INF/jsp/include.jsp"/>
     <c:set var="n"><portlet:namespace/></c:set>
 
-    <style>
-        .ui-widget-header {
-            border : none;
-            background: none;
-        }
-        ul.news-stories li {
-        	padding-bottom:0.5em;
-        	list-style-image:url('<rs:resourceURL value="/rs/famfamfam/silk/1.3/bullet_feed.png"/>');
-        }
-
-        .ui-tooltip {
-            padding:8px;
-            position:absolute;
-            z-index:9999;
-            -o-box-shadow: 0 0 5px #aaa;
-            -moz-box-shadow: 0 0 5px #aaa;
-            -webkit-box-shadow: 0 0 5px #aaa;
-            box-shadow: 0 0 5px #aaa;
-            max-width: 400px;
-            background-color: white;
-        }
-
-        * html .ui-tooltip {
-        	background-image: none;
-        	background-color: white;
-        }
-
-        body .ui-tooltip {
-        	border-width:2px;
-        }
-
-        body .tooltip {
-        	background-color: white;
-        }
-
-        h4 {
-        	font-size: 15;
-        	overflow: auto;
-        }
-
-        .panel-heading {
-        	padding-bottom: 25;
-        }
-
-        .portlet-container .nav-tabs {
-            border : none;
-        }
-
-    </style>
     <portlet:resourceURL var="feedUrl"/>
 
     <div class="org-jasig-portlet-newsreader">

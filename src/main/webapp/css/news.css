@@ -22,3 +22,51 @@
 .org-jasig-portlet-newsreader .portlet-rss-scrollable-content dl { margin:0.5em; padding:0; }
 .org-jasig-portlet-newsreader .portlet-rss-scrollable-content dd { margin:0; padding:0em 0em 0.5em 0em; }
 .org-jasig-portlet-newsreader .portlet-rss-scrollable-content .ui-tooltip {background-color: white;}
+
+<style>
+        .ui-widget-header {
+            border : none;
+            background: none;
+        }
+        ul.news-stories li {
+        	padding-bottom:0.5em;
+        	list-style-image:url('<rs:resourceURL value="/rs/famfamfam/silk/1.3/bullet_feed.png"/>');
+        }
+
+        .ui-tooltip {
+            padding:8px;
+            position:absolute;
+            z-index:9999;
+            -o-box-shadow: 0 0 5px #aaa;
+            -moz-box-shadow: 0 0 5px #aaa;
+            -webkit-box-shadow: 0 0 5px #aaa;
+            box-shadow: 0 0 5px #aaa;
+            max-width: 400px;
+            background-color: white;
+        }
+
+        * html .ui-tooltip {
+        	background-image: none;
+        	background-color: white;
+        }
+
+        body .ui-tooltip {
+        	border-width:2px;
+        }
+
+        body .tooltip {
+        	background-color: white;
+        }
+
+        h4 {
+        	font-size: 15;
+        	overflow: auto;
+        }
+
+        .panel-heading {
+        	padding-bottom: 25;
+        }
+
+        .portlet-container .nav-tabs {
+            border : none;
+        }
