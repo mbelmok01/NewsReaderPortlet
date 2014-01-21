@@ -23,7 +23,6 @@
     <c:set var="n"><portlet:namespace/></c:set>
 
     <portlet:resourceURL var="feedUrl"/>
-
     <div class="org-jasig-portlet-newsreader">
         <div id="${n}">
             <div class="news-reader-feed-list portlet ptl-newsreader view-news "/>
@@ -39,13 +38,14 @@
           <div class="navbar navbar-default">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <spring:message code="edit.feed.feeds" /></h1>
                 </button>
             </div>
+
+
             <div class="navbar-collapse collapse">
-                <ul class="news-feeds-container nav nav-tabs">
+                <!-- <ul class="news-feeds-container nav navbar-nav nav-tabs"> -->
+                <ul class="news-feeds-container nav navbar-nav">
                 </ul>
             </div>
         </div>
