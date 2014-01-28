@@ -53,7 +53,7 @@
     */
 
     $().carousel || document.write('<script src="/../NewsReaderPortlet/rs/bootstrap/3.0.2/js/bootstrap.js"><\/script>');
-
+    
     /*
     if($.fn.jquery != "1.10.2")
     {
@@ -79,12 +79,24 @@ function onWindowResize() {
         
         if(portletWidth < 768)
             $that.addClass("xs");
+        $(".ui-tabs .ui-tabs-nav li").css("width", "100%");
+        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
+        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
         if(portletWidth >= 768 && portletWidth < 992)
             $that.addClass("sm");
+        $(".ui-tabs .ui-tabs-nav li").css("width", "100%");
+        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
+        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
         if(portletWidth >= 992 && portletWidth < 1200)
             $that.addClass("md");
+        $(".ui-tabs .ui-tabs-nav li").css("width", "auto");
+        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
+        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
         if(portletWidth >= 1200)
             $that.addClass("lg");
+        $(".ui-tabs .ui-tabs-nav li").css("width", "auto");
+        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
+        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
     
     });
 }

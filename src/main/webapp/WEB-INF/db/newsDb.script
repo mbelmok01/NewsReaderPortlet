@@ -58,13 +58,10 @@ GRANT DBA TO SA
 SET SCHEMA SYSTEM_LOBS
 INSERT INTO BLOCKS VALUES(0,2147483647,0)
 SET SCHEMA PUBLIC
-INSERT INTO NEWS_CONFIGURATION VALUES(15,'UD','1','1',1,15)
 INSERT INTO NEWS_CONFIGURATION VALUES(23,'UD','1','1',1,23)
 INSERT INTO NEWS_CONFIGURATION VALUES(27,'UD','1','1',1,27)
-INSERT INTO NEWS_DEFINITION VALUES(15,'UD','Le monde','org.jasig.portlet.newsreader.adapter.RomeAdapter',NULL)
 INSERT INTO NEWS_DEFINITION VALUES(23,'UD','NY : Home','org.jasig.portlet.newsreader.adapter.RomeAdapter',NULL)
 INSERT INTO NEWS_DEFINITION VALUES(27,'UD','NY : Business','org.jasig.portlet.newsreader.adapter.RomeAdapter',NULL)
-INSERT INTO NEWS_PARAMETER VALUES(15,'http://www.lemonde.fr/rss/une.xml','url')
 INSERT INTO NEWS_PARAMETER VALUES(23,'http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml','url')
 INSERT INTO NEWS_PARAMETER VALUES(27,'http://rss.nytimes.com/services/xml/rss/nyt/Business.xml','url')
 INSERT INTO NEWS_SET VALUES(1,'default','guest')
