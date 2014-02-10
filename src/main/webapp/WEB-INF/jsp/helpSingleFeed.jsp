@@ -18,25 +18,13 @@
     under the License.
 
 --%>
-
 <jsp:directive.include file="/WEB-INF/jsp/include.jsp"/>
 
-<p>The news feeds area allows you to subscribe to single news feeds, specified as part of the preferences.</p>
-
-<p>News feeds are commonly called RSS Feeds.</p>
-
-<h3>Editing the news feed</h3>
-
-<p>Click on &quot;Edit Preferences&quot; and the area will enter edit mode.</p>
-
-<h3>Adding a news feed</h3>
-
-<p>Whenever you are visiting a website that has either an <img src="<c:url value="/images/rss1.gif"/>" alt="RSS Logo"> or <img src="<c:url value="/images/rss2.gif"/>" alt="RSS Logo"> icon displayed you can subscribe to a news feed.</p>
-
-<p>After clicking on the feed icon, copy the URL from the address bar in your browser into &quot;URL&quot; text box of the &quot;Edit Preferences&quot; area. Enter a name into the 
-&quot;News feed name&quot; text area and press the submit button to save your news feed.</p>
+<spring:message code="single.help.detail" htmlEscape="false"/>
 
 <p>
-	<a href="<portlet:renderURL portletMode="view"/>"><img src="<c:url value="/images/arrow_left.png"/>" style="vertical-align: middle"> Return to news feeds</a>
+    <a href="<portlet:renderURL portletMode="view"/>"><img src="<c:url value="/images/arrow_left.png"/>" style="vertical-align: middle"> Return to news feeds</a>
 </p>
+
 <jsp:directive.include file="/WEB-INF/jsp/footer.jsp"/>
+

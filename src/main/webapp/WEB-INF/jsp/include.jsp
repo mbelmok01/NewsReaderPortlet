@@ -63,43 +63,63 @@
     var $portletContainers;
 
     $(document).ready(function() {
-    $portletContainers = $(".portlet-container");
-    // Resize event isn't fired on DOM Content Loaded, we launch the function manually
-    onWindowResize();
-    $(window).resize(onWindowResize);
+    	
+    	$portletContainers = $(".portlet-container");
+    	
+    	// Resize event isn't fired on DOM Content Loaded, we launch the function manually
+    	onWindowResize();
+
+    	$(window).resize(onWindowResize);
+    	$(window).load(onWindowLoad);
     });
- 
-function onWindowResize() {
-    $portletContainers.each(function(index) {
+
+    function onWindowLoad(){
+    	$portletContainers.each(function(index) {
+    		var $that = $(this);
+	        var portletWidth = $that.width()
+	        
+	        if(portletWidth < 768 || portletWidth >= 768 && portletWidth < 992)
+	        $(".ui-tabs .ui-tabs-nav li").css("width", "100%");
+	        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
+	        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
+	        
+	        if(portletWidth >= 992 && portletWidth < 1200 || portletWidth >= 1200)
+	        $(".ui-tabs .ui-tabs-nav li").css("width", "auto");
+	        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
+	        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
+	    });
+    }
+
+    function onWindowResize() {
+    	$portletContainers.each(function(index) {
         
-        var $that = $(this);
-        var portletWidth = $that.width()
-        
-        $that.removeClass("xs sm md lg");
-        
-        if(portletWidth < 768)
-            $that.addClass("xs");
-        $(".ui-tabs .ui-tabs-nav li").css("width", "100%");
-        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
-        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
-        if(portletWidth >= 768 && portletWidth < 992)
-            $that.addClass("sm");
-        $(".ui-tabs .ui-tabs-nav li").css("width", "100%");
-        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
-        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
-        if(portletWidth >= 992 && portletWidth < 1200)
-            $that.addClass("md");
-        $(".ui-tabs .ui-tabs-nav li").css("width", "auto");
-        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
-        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
-        if(portletWidth >= 1200)
-            $that.addClass("lg");
-        $(".ui-tabs .ui-tabs-nav li").css("width", "auto");
-        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
-        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
-    
-    });
-}
+	        var $that = $(this);
+	        var portletWidth = $that.width()
+	        
+	        $that.removeClass("xs sm md lg");
+	        
+	        if(portletWidth < 768)
+	            $that.addClass("xs");
+	        $(".ui-tabs .ui-tabs-nav li").css("width", "100%");
+	        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
+	        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
+	        if(portletWidth >= 768 && portletWidth < 992)
+	            $that.addClass("sm");
+	        $(".ui-tabs .ui-tabs-nav li").css("width", "100%");
+	        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
+	        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
+	        if(portletWidth >= 992 && portletWidth < 1200)
+	            $that.addClass("md");
+	        $(".ui-tabs .ui-tabs-nav li").css("width", "auto");
+	        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
+	        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
+	        if(portletWidth >= 1200)
+	            $that.addClass("lg");
+	        $(".ui-tabs .ui-tabs-nav li").css("width", "auto");
+	        $(".ui-tabs .ui-tabs-nav li").css("border", "0px");
+	        $(".ui-tabs .ui-tabs-nav li").css("background", "none");
+	    });
+	}
  
 </script>
 

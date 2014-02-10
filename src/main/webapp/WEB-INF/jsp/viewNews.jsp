@@ -39,12 +39,12 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <spring:message code="edit.feed.feeds" /></h1>
+                    <span class="glyphicon glyphicon-align-justify"></span> 
                 </button>
             </div>
 
 
             <div class="navbar-collapse collapse">
-                <!-- <ul class="news-feeds-container nav navbar-nav nav-tabs"> -->
                 <ul class="news-feeds-container nav navbar-nav">
                 </ul>
             </div>
